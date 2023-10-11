@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #search{
+            width: 90%;
+            margin-left: 40px;
+            padding: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgb(221, 205, 208);
+        }
+        #root{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin-top: 20px;
+           
+        }
+        #card{
+            margin-top: 40px;
+            margin: auto;
+            border-radius: 20px;
+            background-color: rgb(206, 187, 190);
+        }
+        #card:hover{
+            transform: translate(-10px);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #card > p{
+            margin-top: 0px;
+            text-align: center;
+            color: rgb(0, 112, 112);
+        }
+        #card > img{
+          border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+   <input type="text" id="search" placeholder="Search Movies...."> 
+   <div id="root"></div>
+</body>
+<script>
+    let screen = document.getElementById("root")
+    let timeout = null;
+    let searchmovie = document.getElementById("search")
+    searchmovie.addEventListener("input",function(){
+        clearTimeout(timeout)
+        let movieList =  document.getElementById("search").value
+        timeout=setTimeout(function(){
+            searchMoviesList(movieList)
+        },800)
+    })
+
+    async function searchMoviesList(movie){
+        let res = await fetch(`https://www.omdbapi.com/?apikey=88027651&s=${movie}`)
+        let Resdata = await res.json()
+        console.log(Resdata.Search)
+        movies(Resdata.Search) 
+    }
+    function movies(data){
+        screen.innerHTML = ""
+      data.forEach(ele => {
+        screen.innerHTML+=`
+        <div id="card">
+     <img src="${ele.Poster}" alt="movieimage" width="100%" hight="100px">
+     <p>${ele.Title}</p>
+     </div>
+        `
+      });
+    }
+</script>
+</html>
