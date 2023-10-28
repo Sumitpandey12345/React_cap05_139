@@ -1,0 +1,43 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.head{
+  width: 75%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: rgb(95, 6, 179);
+}
+.head>h1{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.inpcont{
+   height: 150px;
+   width: 60%;
+   margin: auto;
+   justify-content: center; 
+   margin-top: 20px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+}
+#input{
+  margin-top: 25px;
+  width: 600px;
+  height: 50px;
+
+ 
+}
+.inpcont>button{
+  width: 70px;
+  height: 30px;
+  color: white;
+  margin-top: 10px;
+  background-color: rgb(95, 6, 179);
+  border-radius: 5px;
+  border: none;
+}
