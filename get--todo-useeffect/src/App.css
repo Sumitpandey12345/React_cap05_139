@@ -1,0 +1,28 @@
+.button{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.button > button{
+    background-color: aqua;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 30px;
+}
+.button>h1{
+    color: rgb(67, 3, 126);
+}
+.child{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 10px;
+   margin: auto;
+}
+ .child>div{
+   margin: auto;
+   margin-top: 10px;
+   width: 250px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+} 
